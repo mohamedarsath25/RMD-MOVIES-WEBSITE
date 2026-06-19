@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMD MOVIES - Search</title>
+    <link rel="icon" href="camera.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-rmd">RMD</span><span class="logo-movies">MOVIES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="search.html" class="active">Search</a>
+            <a href="index.html">Movies</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </header>
+
+    <main class="search-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <p class="page-eyebrow">🔍 Discover</p>
+            <h1 class="page-title">Search Movies</h1>
+            <p class="page-sub">Find any movie from our collection instantly</p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box-wrapper">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Type a movie name or actor...">
+                <button id="resetBtn" title="Clear">✕</button>
+            </div>
+            <div class="search-meta" id="searchMeta"></div>
+
+            <!-- Recent Searches -->
+            <div class="recent-searches" id="recentSearches"></div>
+        </div>
+
+        <!-- Filter + Sort Row -->
+        <div class="filter-sort-row">
+            <div class="filter-row">
+                <button class="filter-pill active" data-cat="all">All</button>
+                <button class="filter-pill" data-cat="tamil">Tamil</button>
+                <button class="filter-pill" data-cat="english">English</button>
+            </div>
+            <div class="sort-wrapper">
+                <label for="sortSelect" class="sort-label">Sort by:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Default</option>
+                    <option value="name-asc">Name A–Z</option>
+                    <option value="name-desc">Name Z–A</option>
+                    <option value="year-new">Newest First</option>
+                    <option value="year-old">Oldest First</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-header">
+            <h3 id="resultsLabel">All Movies</h3>
+            <span id="resultCount" class="result-count"></span>
+        </div>
+
+        <div id="movieContainer" class="movie-grid"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <div class="empty-icon">🎬</div>
+            <h3>No movies found</h3>
+            <p>Try a different keyword or browse all movies.</p>
+            <button onclick="resetSearch()" class="btn-reset-main">Show All Movies</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">RMD<span>MOVIES</span></div>
+            <p class="footer-copy">&copy; 2026 RMDMovies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="search.js"></script>
+</body>
+</html>

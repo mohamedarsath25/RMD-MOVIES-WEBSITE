@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMD MOVIES - Home</title>
+    <link rel="icon" href="camera.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">RMD<span>MOVIES</span></div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-rmd">RMD</span><span class="logo-movies">MOVIES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="search.html">Search</a>
+            <a href="index.html">Movies</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" title="Toggle Theme">☀️</button>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">🎬 Your Cinema Universe</p>
+                <h1 class="hero-title">
+                    <span class="line1">Welcome to</span>
+                    <span class="line2">RMDMovies</span>
+                </h1>
+                <p class="hero-sub">Your ultimate destination for the latest movies, timeless classics, and everything in between.</p>
+                <div class="hero-buttons">
+                    <a href="index.html" class="btn btn-primary">🎬 Explore Now</a>
+                    <a href="search.html" class="btn btn-ghost">🔍 Search Movies</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-label">Movies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Actors</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+                <p>Scroll</p>
+            </div>
+        </section>
+
+        <!-- About RMD Movies Section -->
+        <section class="about-rmd reveal">
+            <div class="about-badge">About Us</div>
+            <h2 class="section-title">What is <span class="accent">RMD Movies?</span></h2>
+            <div class="about-content">
+                <p>RMD Movies is your one‑stop platform for discovering and enjoying the best of cinema. We bring you detailed information about the latest releases, timeless classics, and upcoming blockbusters from Hollywood, Bollywood, Kollywood, and more.</p>
+                <p>Our mission is to connect movie lovers with the films they love – with accurate details, easy navigation, and a community vibe. Explore our curated collections and find where to watch on Netflix, Amazon Prime, Hotstar, and Zee5.</p>
+            </div>
+            <div class="platform-badges">
+                <span class="platform netflix">Netflix</span>
+                <span class="platform prime">Prime</span>
+                <span class="platform hotstar">Hotstar</span>
+                <span class="platform zee5">Zee5</span>
+            </div>
+        </section>
+
+        <!-- Trending Movies Row -->
+        <section class="movie-row reveal">
+            <div class="row-header">
+                <h2 class="row-title"><span class="fire">🔥</span> Trending Now</h2>
+                <a href="index.html" class="see-all">See All →</a>
+            </div>
+            <div class="movie-grid">
+                <a href="https://www.netflix.com" target="_blank" class="movie-card">
+                    <div class="card-badge">Hot</div>
+                    <img src="avatar-3-fire-and-ash-movie-poster.webp" alt="Avatar 3">
+                    <div class="card-overlay">
+                        <p class="card-title">Avatar 3</p>
+                        <p class="card-platform">Netflix</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.amazonprimevideo.com" target="_blank" class="movie-card">
+                    <div class="card-badge">New</div>
+                    <img src="91GxiV5RwdL._AC_UF1000,1000_QL80_.jpg" alt="The Housemaid">
+                    <div class="card-overlay">
+                        <p class="card-title">The Housemaid</p>
+                        <p class="card-platform">Prime Video</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.hotstar.com" target="_blank" class="movie-card">
+                    <img src="images (2).jpg" alt="Primate">
+                    <div class="card-overlay">
+                        <p class="card-title">Primate</p>
+                        <p class="card-platform">Hotstar</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.netflix.com" target="_blank" class="movie-card">
+                    <img src="MV5BM2UzYmIyZTAtNmZlZi00MGMxLTk4ZDQtNDZjNDVhNzM1NzRmXkEyXkFqcGc@._V1_.jpg" alt="Mercy">
+                    <div class="card-overlay">
+                        <p class="card-title">Mercy</p>
+                        <p class="card-platform">Netflix</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Top Picks Row -->
+        <section class="movie-row reveal">
+            <div class="row-header">
+                <h2 class="row-title">⭐ Top Picks for You</h2>
+                <a href="index.html" class="see-all">See All →</a>
+            </div>
+            <div class="movie-grid">
+                <a href="https://www.netflix.com" target="_blank" class="movie-card">
+                    <div class="card-badge trending">Trending</div>
+                    <img src="jana--6c8caf60-dbdd-11f0-a680-332b345d0f23.jpg" alt="Jana Nayagan">
+                    <div class="card-overlay">
+                        <p class="card-title">Jana Nayagan</p>
+                        <p class="card-platform">Netflix</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.amazonprimevideo.com" target="_blank" class="movie-card">
+                    <img src="images.jpg" alt="parasakthi">
+                    <div class="card-overlay">
+                        <p class="card-title">Parasakthi</p>
+                        <p class="card-platform">Prime Video</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.hotstar.com" target="_blank" class="movie-card">
+                    <img src="Thalaivar-Thambi-Thalaimaiyil-12145180-eeb8-11f0-af41-ad503c0c7315.jpg" alt="Thalaivar Thambi">
+                    <div class="card-overlay">
+                        <p class="card-title">Thalaivar Thambi</p>
+                        <p class="card-platform">Hotstar</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.zee5.com" target="_blank" class="movie-card">
+                    <img src="download.jpg" alt="Sirai">
+                    <div class="card-overlay">
+                        <p class="card-title">Sirai</p>
+                        <p class="card-platform">Zee5</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recently Added Row -->
+        <section class="movie-row reveal">
+            <div class="row-header">
+                <h2 class="row-title">🆕 Recently Added</h2>
+                <a href="index.html" class="see-all">See All →</a>
+            </div>
+            <div class="movie-grid">
+                <a href="https://www.hotstar.com" target="_blank" class="movie-card">
+                    <div class="card-badge">Marvel</div>
+                    <img src="avengers-doomsday-poster-featuring-everyone-my-biggest-v0-39utp2oos39g1.webp" alt="Avengers Doomsday">
+                    <div class="card-overlay">
+                        <p class="card-title">Avengers Doomsday</p>
+                        <p class="card-platform">Hotstar</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.netflix.com" target="_blank" class="movie-card">
+                    <img src="avatar-3-fire-and-ash-movie-poster.webp" alt="Avatar 3">
+                    <div class="card-overlay">
+                        <p class="card-title">Avatar 3</p>
+                        <p class="card-platform">Netflix</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.amazonprimevideo.com" target="_blank" class="movie-card">
+                    <img src="MV5BOWFlZmZiNWMtY2U4Mi00ZGY1LTgzZTItMTkxZjczNjAyNGI0XkEyXkFqcGc@._V1_.jpg" alt="Cold Storage">
+                    <div class="card-overlay">
+                        <p class="card-title">Cold Storage</p>
+                        <p class="card-platform">Prime Video</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+                <a href="https://www.netflix.com" target="_blank" class="movie-card">
+                    <div class="card-badge">Marvel</div>
+                    <img src="images (1).jpg" alt="Spider Man">
+                    <div class="card-overlay">
+                        <p class="card-title">Spider-Man: Brand New Day</p>
+                        <p class="card-platform">Netflix</p>
+                    </div>
+                    <button class="like-btn" onclick="likeMovie(event)" aria-label="Like">🤍</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter reveal">
+            <div class="newsletter-inner">
+                <h2>Stay in the Loop 🎬</h2>
+                <p>Get notified about the latest movies and releases.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address..." id="newsletterEmail">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">RMD<span>MOVIES</span></div>
+            <p class="footer-tagline">Your cinema universe, all in one place.</p>
+            <nav class="footer-nav">
+                <a href="home.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="index.html">Movies</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 RMDMovies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <script src="home.js"></script>
+    <script>
+        // Hide loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1200);
+        });
+    </script>
+</body>
+</html>

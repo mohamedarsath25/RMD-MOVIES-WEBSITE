@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMD MOVIES - Gallery</title>
+    <link rel="icon" href="camera.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-inner" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-rmd">RMD</span><span class="logo-movies">MOVIES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="index.html">Movies</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">☀️</button>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <p class="page-eyebrow">🎭 Explore</p>
+            <h1 class="page-title">Movie Gallery</h1>
+            <p class="page-sub">Browse movies by your favourite actors</p>
+        </div>
+
+        <!-- Actor Navigation Bar -->
+        <div class="actor-nav-bar" id="actorNav"></div>
+
+        <!-- Featured Actors Cards -->
+        <section class="featured-actors">
+            <h2 class="section-heading">Featured Actors</h2>
+            <div class="actor-cards" id="actorCards"></div>
+        </section>
+
+        <!-- Vijay Movies -->
+        <section id="vijay" class="gallery-section">
+            <div class="section-title-row">
+                <img src="vijay image.jpg" alt="Vijay" class="actor-avatar">
+                <h2 class="section-heading">Vijay</h2>
+                <span class="movie-count">8 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('jana--6c8caf60-dbdd-11f0-a680-332b345d0f23.jpg','Jana Nayagan')"><img src="jana--6c8caf60-dbdd-11f0-a680-332b345d0f23.jpg" alt="Jana Nayagan" loading="lazy"><div class="card-overlay"><p>Jana Nayagan</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('master.jpg','Master')"><img src="master.jpg" alt="Master" loading="lazy"><div class="card-overlay"><p>Master</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('mersal.jpg','Mersal')"><img src="mersal.jpg" alt="Mersal" loading="lazy"><div class="card-overlay"><p>Mersal</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('bigil.jpg','Bigil')"><img src="bigil.jpg" alt="Bigil" loading="lazy"><div class="card-overlay"><p>Bigil</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('vaarisu.jpg','Varisu')"><img src="vaarisu.jpg" alt="Varisu" loading="lazy"><div class="card-overlay"><p>Varisu</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('beast.jpg','Beast')"><img src="beast.jpg" alt="Beast" loading="lazy"><div class="card-overlay"><p>Beast</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('puli.jpg','Puli')"><img src="puli.jpg" alt="Puli" loading="lazy"><div class="card-overlay"><p>Puli</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('kathi.jpg','Kathi')"><img src="kathi.jpg" alt="Kathi" loading="lazy"><div class="card-overlay"><p>Kathi</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Ajith Movies -->
+        <section id="ajith" class="gallery-section">
+            <div class="section-title-row">
+                <img src="ajith image.jpg" alt="Ajith" class="actor-avatar">
+                <h2 class="section-heading">Ajith Kumar</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('mankatha.png','Mankatha')"><img src="mankatha.png" alt="Mankatha" loading="lazy"><div class="card-overlay"><p>Mankatha</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('viswasam.png','Viswasam')"><img src="viswasam.png" alt="Viswasam" loading="lazy"><div class="card-overlay"><p>Viswasam</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('vedalam.png','Vedalam')"><img src="vedalam.png" alt="Vedalam" loading="lazy"><div class="card-overlay"><p>Vedalam</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('thunivu.png','Thunivu')"><img src="thunivu.png" alt="Thunivu" loading="lazy"><div class="card-overlay"><p>Thunivu</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Rajinikanth -->
+        <section id="rajinikanth" class="gallery-section">
+            <div class="section-title-row">
+                <img src="rajinikanth image.jpg" alt="Rajinikanth" class="actor-avatar">
+                <h2 class="section-heading">Rajinikanth</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('jailer.png','Jailer')"><img src="jailer.png" alt="Jailer" loading="lazy"><div class="card-overlay"><p>Jailer</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('kabali.jpg','Kabali')"><img src="kabali.jpg" alt="Kabali" loading="lazy"><div class="card-overlay"><p>Kabali</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('enthiran.png','Enthiran')"><img src="enthiran.png" alt="Enthiran" loading="lazy"><div class="card-overlay"><p>Enthiran</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('petta.webp','Petta')"><img src="petta.webp" alt="Petta" loading="lazy"><div class="card-overlay"><p>Petta</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Kamal Haasan -->
+        <section id="kamal" class="gallery-section">
+            <div class="section-title-row">
+                <img src="kamal hasan.jpg" alt="Kamal Haasan" class="actor-avatar">
+                <h2 class="section-heading">Kamal Haasan</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('vikram.png','Vikram')"><img src="vikram.png" alt="Vikram" loading="lazy"><div class="card-overlay"><p>Vikram</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('indian.png','Indian')"><img src="indian.png" alt="Indian" loading="lazy"><div class="card-overlay"><p>Indian</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('Dasavatharam.png','Dasavatharam')"><img src="Dasavatharam.png" alt="Dasavatharam" loading="lazy"><div class="card-overlay"><p>Dasavatharam</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('viswaroopam.png','Viswaroopam')"><img src="viswaroopam.png" alt="Viswaroopam" loading="lazy"><div class="card-overlay"><p>Viswaroopam</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Suriya -->
+        <section id="suriya" class="gallery-section">
+            <div class="section-title-row">
+                <img src="suriya image.jpg" alt="Suriya" class="actor-avatar">
+                <h2 class="section-heading">Suriya</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('singam.webp','Singam')"><img src="singam.webp" alt="Singam" loading="lazy"><div class="card-overlay"><p>Singam</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('sooraraipottru.jpg','Soorarai Pottru')"><img src="sooraraipottru.jpg" alt="Soorarai Pottru" loading="lazy"><div class="card-overlay"><p>Soorarai Pottru</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('jaibhim.jpg','Jai Bhim')"><img src="jaibhim.jpg" alt="Jai Bhim" loading="lazy"><div class="card-overlay"><p>Jai Bhim</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('24.jpg','24')"><img src="24.jpg" alt="24" loading="lazy"><div class="card-overlay"><p>24</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Dhanush -->
+        <section id="dhanush" class="gallery-section">
+            <div class="section-title-row">
+                <img src="dhanush image.jpg" alt="Dhanush" class="actor-avatar">
+                <h2 class="section-heading">Dhanush</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('asuran\'.jpg','Asuran')"><img src="asuran'.jpg" alt="Asuran" loading="lazy"><div class="card-overlay"><p>Asuran</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('vip.jpg','VIP')"><img src="vip.jpg" alt="VIP" loading="lazy"><div class="card-overlay"><p>VIP</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('jagame.jpg','Jagame Thandhiram')"><img src="jagame.jpg" alt="Jagame Thandhiram" loading="lazy"><div class="card-overlay"><p>Jagame Thandhiram</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('idly.jpg','Idli Kadai')"><img src="idly.jpg" alt="Idli Kadai" loading="lazy"><div class="card-overlay"><p>Idli Kadai</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- STR -->
+        <section id="str" class="gallery-section">
+            <div class="section-title-row">
+                <img src="simbu image.jpg" alt="STR" class="actor-avatar">
+                <h2 class="section-heading">STR</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('maanadu.webp','Maanadu')"><img src="maanadu.webp" alt="Maanadu" loading="lazy"><div class="card-overlay"><p>Maanadu</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('vendhu.webp','Vendhu Thanindhathu Kaadu')"><img src="vendhu.webp" alt="Vendhu Thanindhathu Kaadu" loading="lazy"><div class="card-overlay"><p>Vendhu Thanindhathu Kaadu</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('pathuthala.webp','Pathu Thala')"><img src="pathuthala.webp" alt="Pathu Thala" loading="lazy"><div class="card-overlay"><p>Pathu Thala</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('acham.webp','Achcham Yenbadhu Madamaiyada')"><img src="acham.webp" alt="Achcham Yenbadhu Madamaiyada" loading="lazy"><div class="card-overlay"><p>Achcham Yenbadhu Madamaiyada</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Sivakarthikeyan -->
+        <section id="sivakarthikeyan" class="gallery-section">
+            <div class="section-title-row">
+                <img src="sivakarthikeyan.jpg" alt="Sivakarthikeyan" class="actor-avatar">
+                <h2 class="section-heading">Sivakarthikeyan</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('doctor.webp','Doctor')"><img src="doctor.webp" alt="Doctor" loading="lazy"><div class="card-overlay"><p>Doctor</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('don.webp','Don')"><img src="don.webp" alt="Don" loading="lazy"><div class="card-overlay"><p>Don</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('prince.webp','Prince')"><img src="prince.webp" alt="Prince" loading="lazy"><div class="card-overlay"><p>Prince</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('remo.webp','Remo')"><img src="remo.webp" alt="Remo" loading="lazy"><div class="card-overlay"><p>Remo</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Vijay Antony -->
+        <section id="vijayantony" class="gallery-section">
+            <div class="section-title-row">
+                <img src="Vijay-Antony image.jpg" alt="Vijay Antony" class="actor-avatar">
+                <h2 class="section-heading">Vijay Antony</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('pichai.webp','Pichaikkaran')"><img src="pichai.webp" alt="Pichaikkaran" loading="lazy"><div class="card-overlay"><p>Pichaikkaran</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('salim.webp','Salim')"><img src="salim.webp" alt="Salim" loading="lazy"><div class="card-overlay"><p>Salim</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('kodiyil.jpg','Kodiyil Oruvan')"><img src="kodiyil.jpg" alt="Kodiyil Oruvan" loading="lazy"><div class="card-overlay"><p>Kodiyil Oruvan</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('thimiru.jpg','Thimiru Pudichavan')"><img src="thimiru.jpg" alt="Thimiru Pudichavan" loading="lazy"><div class="card-overlay"><p>Thimiru Pudichavan</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+        <!-- Chiyaan Vikram -->
+        <section id="vikram" class="gallery-section">
+            <div class="section-title-row">
+                <img src="vikramactor.jpg" alt="Chiyaan Vikram" class="actor-avatar">
+                <h2 class="section-heading">Chiyaan Vikram</h2>
+                <span class="movie-count">4 Movies</span>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openLightbox('anniyan.webp','Anniyan')"><img src="anniyan.webp" alt="Anniyan" loading="lazy"><div class="card-overlay"><p>Anniyan</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('I.webp','I')"><img src="I.webp" alt="I" loading="lazy"><div class="card-overlay"><p>I</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('ponniyan.webp','Ponniyin Selvan')"><img src="ponniyan.webp" alt="Ponniyin Selvan" loading="lazy"><div class="card-overlay"><p>Ponniyin Selvan</p></div><div class="zoom-hint">🔍</div></div>
+                <div class="movie-card" onclick="openLightbox('cobra.webp','Cobra')"><img src="cobra.webp" alt="Cobra" loading="lazy"><div class="card-overlay"><p>Cobra</p></div><div class="zoom-hint">🔍</div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">RMD<span>MOVIES</span></div>
+            <p class="footer-copy">&copy; 2026 RMDMovies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

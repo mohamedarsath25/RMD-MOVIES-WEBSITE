@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMD MOVIES - Movies</title>
+    <link rel="icon" href="camera.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Trailer Modal -->
+    <div class="trailer-modal" id="trailerModal" onclick="if(event.target===this)closeTrailer()">
+        <div class="trailer-modal-inner">
+            <div class="trailer-modal-header">
+                <span id="trailerTitle"></span>
+                <button onclick="closeTrailer()" class="trailer-close">✕</button>
+            </div>
+            <div class="trailer-frame-wrapper">
+                <iframe id="trailerFrame" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watch Later Panel -->
+    <div class="wl-panel" id="wlPanel">
+        <div class="wl-panel-header">
+            <h3>🕐 Watch Later</h3>
+            <button id="wlClose">✕</button>
+        </div>
+        <div class="wl-list" id="wlList"></div>
+    </div>
+    <div class="wl-overlay" onclick="document.getElementById('wlPanel').classList.remove('open')"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-rmd">RMD</span><span class="logo-movies">MOVIES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="index.html" class="active">Movies</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+            <button class="wl-nav-btn" id="watchLaterBtn" title="Watch Later">
+                🕐 <span class="wl-count" id="wlCount" style="display:none">0</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">☀️</button>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-label">🎬 Featured Film</p>
+                <h1 class="hero-title">Jana Nayagan</h1>
+                <p class="hero-sub">Thalapathy Vijay's 68th film — Coming 2026</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openTrailer('Jana Nayagan')">▶ Watch Trailer</button>
+                    <a href="search.html" class="btn btn-ghost">Search Movies</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Pills -->
+        <div class="filter-bar">
+            <div class="filter-inner">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="tamil">Tamil</button>
+                <button class="filter-pill" data-filter="english">English</button>
+            </div>
+        </div>
+
+        <!-- Movie Rows -->
+        <div id="movieRows"></div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">RMD<span>MOVIES</span></div>
+            <p class="footer-copy">&copy; 2026 RMDMovies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

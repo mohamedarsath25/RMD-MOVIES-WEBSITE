@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMD MOVIES - Contact</title>
+    <link rel="icon" href="camera.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-rmd">RMD</span><span class="logo-movies">MOVIES</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="index.html">Movies</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html" class="active">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+            <!-- User greeting (shown when logged in) -->
+            <div class="user-info" id="userInfo">
+                <span class="user-avatar" id="userAvatar">👤</span>
+                <span class="user-name" id="userName"></span>
+            </div>
+            <button class="signout-btn" id="signoutBtn" title="Sign Out">
+                <span class="signout-icon">⏻</span>
+                <span class="signout-text">Sign Out</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">☀️</button>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+        </div>
+    </header>
+
+    <main class="about-container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <p class="page-eyebrow">🎬 Who We Are</p>
+            <h1 class="page-title">About RMDMovies</h1>
+        </div>
+
+        <!-- About Grid -->
+        <div class="about-grid">
+            <section class="about-card reveal">
+                <div class="about-card-icon">🎥</div>
+                <h2>Who We Are</h2>
+                <p>RMDMovies is a movie information website created for movie lovers who want quick and easy access to details about films from all industries.</p>
+            </section>
+            <section class="about-card reveal">
+                <div class="about-card-icon">🎯</div>
+                <h2>Our Purpose</h2>
+                <p>We share accurate and simple movie information in one place — helping users discover films, explore genres, and stay updated with the latest cinema.</p>
+            </section>
+            <section class="about-card reveal">
+                <div class="about-card-icon">📺</div>
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>Movie details &amp; summaries</li>
+                    <li>Latest &amp; upcoming releases</li>
+                    <li>Genre &amp; ratings info</li>
+                    <li>OTT platform links</li>
+                </ul>
+            </section>
+            <section class="about-card reveal">
+                <div class="about-card-icon">🚀</div>
+                <h2>Our Vision</h2>
+                <p>To grow RMDMovies into a trusted, simple, and enjoyable movie information platform for students and movie fans everywhere.</p>
+            </section>
+        </div>
+
+        <!-- Platform Badges -->
+        <div class="platforms-row reveal">
+            <span class="platform netflix">Netflix</span>
+            <span class="platform prime">Prime Video</span>
+            <span class="platform hotstar">Hotstar</span>
+            <span class="platform zee5">Zee5</span>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="contact-section reveal">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p class="contact-sub">Have feedback, a suggestion, or just want to say hi?</p>
+
+                <div class="contact-detail">
+                    <span class="detail-icon">📞</span>
+                    <div>
+                        <p class="detail-label">Phone</p>
+                        <p class="detail-value">770823782X</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="detail-icon">✉️</span>
+                    <div>
+                        <p class="detail-label">Email</p>
+                        <p class="detail-value">mdarsath1234@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="detail-icon">📍</span>
+                    <div>
+                        <p class="detail-label">Region</p>
+                        <p class="detail-value">Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>Send Feedback</h2>
+                <form id="feedbackForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                        <span class="field-error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
+                        <span class="field-error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="field-error" id="messageError"></span>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" id="submitBtn">Send Message ✉️</button>
+                        <button type="reset" id="resetBtn">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+
+    </main>
+
+    <!-- Sign Out Confirmation Modal -->
+    <div class="modal-overlay" id="signoutModal">
+        <div class="modal">
+            <div class="modal-icon">⏻</div>
+            <h3 class="modal-title">Sign Out</h3>
+            <p class="modal-msg">Are you sure you want to sign out?<br>
+                <span id="modalUserName"></span>
+            </p>
+            <div class="modal-actions">
+                <button class="modal-cancel" id="modalCancel">Cancel</button>
+                <button class="modal-confirm" id="modalConfirm">Yes, Sign Out</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">RMD<span>MOVIES</span></div>
+            <p class="footer-copy">&copy; 2026 RMDMovies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="about.js"></script>
+</body>
+</html>
